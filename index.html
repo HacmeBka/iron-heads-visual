@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Returns</title>
+  <meta name="description" content="Returns — a clean, responsive gallery for iron heads models." />
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Returns">
+  <meta property="og:description" content="Explore the Iron Heads Models gallery.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a class="logo" href="#" aria-label="Homepage"><span class="logo-mark" aria-hidden="true">↩</span> Returns</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container grid">
+        <div class="hero-text">
+          <h1>Returns</h1>
+          <p>Explore the gallery of Iron Heads models. Drag in your images or run the import script to populate the gallery.</p>
+          <div class="actions">
+            <a class="btn primary" href="#gallery">View gallery</a>
+            <label class="btn" for="file-input">Add images</label>
+            <input id="file-input" type="file" accept="image/*" multiple style="position:absolute;left:-9999px;" />
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="assets/img/hero.svg" alt="Abstract shapes illustration" width="640" height="480" />
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2>Gallery</h2>
+        <p class="muted">Grouped by <strong>year</strong> and sorted by date within each year. Filter to focus on a specific year.</p>
+        <div class="filters" role="region" aria-label="Gallery filters">
+          <label for="year-filter">Year</label>
+          <select id="year-filter" name="year-filter">
+            <option value="all">All years</option>
+          </select>
+        </div>
+        <div id="gallery-root" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container">
+        <h2>About</h2>
+        <p><strong>Returns</strong> is a minimal, accessible, mobile‑first site. Customize colors in <code>css/styles.css</code> and replace images in <code>assets/img/iron-heads</code>.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <form class="contact-form" action="mailto:you@example.com" method="post" enctype="text/plain">
+          <label for="name">Name</label>
+          <input id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button class="btn primary" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Returns. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <img id="lightbox-img" alt="" />
+    <p id="lightbox-caption" class="caption"></p>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
